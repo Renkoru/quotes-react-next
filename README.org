@@ -1,0 +1,11 @@
+* Start the app
+1. DB - 'docker-compose up' (obsolete)
+2. backend - 'cd backend && npm run dev' (obsolete)
+2. frontend - 'cd frontend && npm run dev'
+* TODOs
+** TODO add user registration and login logic
+** TODO add authentication for backend and frontend
+** TODO Year of the quote. optional field number
+** TODO 
+* Backup and restore volumes
+https://docs.docker.com/engine/storage/volumes/
