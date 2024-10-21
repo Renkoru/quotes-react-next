@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import "@styles/globals.css";
 
 import NavBar from "../components/NavBar";
 import Layout from "../components/Layout";
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +20,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Quotes",
   description: "Discover & share quotes",
-}
+};
 
 export default function RootLayout({
   children,
@@ -33,9 +32,7 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <AppRouterCacheProvider>
           <NavBar />
-          <Layout>
-            {children}
-          </Layout>
+          <Layout>{children}</Layout>
         </AppRouterCacheProvider>
       </body>
     </html>

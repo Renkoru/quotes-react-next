@@ -6,6 +6,41 @@
 ** TODO add user registration and login logic
 ** TODO add authentication for backend and frontend
 ** TODO Year of the quote. optional field number
-** TODO 
+** TODO Deploy project to Vercer (Free)
+https://vercel.com/pricing
+** TODO Check the superbase for DB (Free)
+https://supabase.com/
 * Backup and restore volumes
 https://docs.docker.com/engine/storage/volumes/
+* Authentication
+Via google - https://console.cloud.google.com/
+* Restclient
+#+BEGIN_SRC restclient
+  # get quotes
+  GET http://localhost:1337/api/quotes?populate[addedBy][fields][0]=username&populate[author][fields][0]=name
+
+  # get filtered quotes
+  GET http://localhost:1337/api/quotes?filters[addedBy][$eq]=7
+
+
+  # get me
+  GET http://localhost:1337/api/users/me
+  Authorization: Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IjczZTI1Zjk3ODkxMTljNzg3NWQ1ODA4N2E3OGFjMjNmNWVmMmVkYTMiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI4ODM4ODE4NzE3MzUtZGVob21mbTliZTB1aW40YTFuNXQwdXN1MW11anZqNG4uYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI4ODM4ODE4NzE3MzUtZGVob21mbTliZTB1aW40YTFuNXQwdXN1MW11anZqNG4uYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTM2NjgyMjE1ODczODE2Mzc4MDciLCJlbWFpbCI6Im1ydXJlbmtvQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiRFBkZVZ6ckoyMDVfUnFqQ1VNOFJyQSIsImlhdCI6MTcyOTUxMDc0MywiZXhwIjoxNzI5NTE0MzQzfQ.Y_2I0t8me1dkp4zEmNr_tVdAtvcVuHE3FAJqZCu7iFZ4sgT4QZo2IJ_v0ZC9iY0inWIteVWRxGectSgL5s_09b_15ageGjgesARu3zLr26JbLRkxXKUlHF3TBCoP2_c0lCxISrkYT3NcqN-jyV2ZXSeXwd9Q-pnTB-ZdAyKFwGZS3hXj0JZdlAIZAvgq0EcjwxSe7Dja8Nw-8LqwJpTfmckpqK0JB_3grKmbJPAKTeQuJtVG4juQgiKQ1BNzaOVEB22EKFTGMsERfrSqaUbnXXIjsXQQLpE1cYZP_q29y4vvLG77LqM4q02mbeyFpi5lXdwF_BdOiwi6K7XdovJvCQ
+
+  # get users
+  GET http://localhost:1337/api/users/me
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzI5NTE1NzM0LCJleHAiOjE3MzIxMDc3MzR9.IWNTZFbs_6Ntu_P7HVrGnx_fGUEI1WLtYzr3ZYp5pgE
+  # Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzI5NTEzOTMyLCJleHAiOjE3MzIxMDU5MzJ9.Cd7DZvP9DPyitF4vEVJAg7YFAzAx6sl4kli9GuOZ3gA
+
+
+
+  # auth local
+  POST http://localhost:1337/api/auth/local
+  Content-type: application/json
+  {
+       "identifier": "1@gmail.com",
+       "password": "111111"
+  }
+#+END_SRC
+
+
